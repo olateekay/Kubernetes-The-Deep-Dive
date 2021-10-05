@@ -36,3 +36,20 @@ OR
 *In k8s version 1.19+, we can specify the --replicas option to create a deployment with 4 replicas.*
 
 `kubectl create deployment --image=nginx nginx --replicas=4 --dry-run=client -o yaml > nginx-deployment.yaml`
+
+*Deploy a pod called "my-pod" using the nginx:alpine image*
+
+`kubectl run my-pod --image=nginx:alpine`
+
+If you are a Kubernetes beginner you should know that this is not a common way to run Pods. The common way is to run a Deployment which in turn runs Pod(s).
+In addition, Pods and/or Deployments are usually defined in files rather than executed directly using only the CLI arguments.
+
+*What are your thoughts on "Pods are not meant to be created directly"?*
+
+Pods are usually indeed not created directly. You'll notice that Pods are usually created as part of another entities such as Deployments or ReplicaSets.
+If a Pod dies, Kubernetes will not bring it back. This is why it's more useful for example to define ReplicaSets that will make sure that a given number of Pods will always run, even after a certain Pod dies.
+
+*How many containers can a pod contain?*
+
+A pod can include multiple containers but in most cases it would probably be one container per pod.
+
