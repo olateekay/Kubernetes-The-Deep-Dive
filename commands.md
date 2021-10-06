@@ -56,3 +56,15 @@ A pod can include multiple containers but in most cases it would probably be one
 Another way to check what's going on, is to run 
 `kubectl logs <POD_NAME>`
  This will provide us with the logs from the containers running in that Pod.
+
+
+Run the command: 
+
+`kubectl describe node node01 | grep -i taints`
+
+ to check taint exists.
+
+
+ Create a taint on node01 with key of spray, value of mortein and effect of NoSchedule
+
+ Run the command: kubectl taint nodes node01 spray=mortein:NoSchedule
