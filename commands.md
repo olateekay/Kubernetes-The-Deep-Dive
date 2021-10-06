@@ -53,3 +53,6 @@ If a Pod dies, Kubernetes will not bring it back. This is why it's more useful f
 
 A pod can include multiple containers but in most cases it would probably be one container per pod.
 
+Another way to check what's going on, is to run 
+`kubectl logs <POD_NAME>`
+ This will provide us with the logs from the containers running in that Pod.
