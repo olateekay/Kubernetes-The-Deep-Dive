@@ -68,3 +68,7 @@ Run the command:
  Create a taint on node01 with key of spray, value of mortein and effect of NoSchedule
 
  Run the command: kubectl taint nodes node01 spray=mortein:NoSchedule
+
+
+ number of daemon set in cluster in all namespace 
+ `kubectl get ds --all-namespaces`
