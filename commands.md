@@ -72,3 +72,6 @@ Run the command:
 
  number of daemon set in cluster in all namespace 
  `kubectl get ds --all-namespaces`
+
+ `kubectl top node`
+ `kubectl top pod`
